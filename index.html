@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment 6</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+                 <!-- header  -->
+
+<header class=" mx-auto container">
+  <div class="mx-auto container navbar bg-base-100">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-30">
+          <a class="tooltip tooltip-right" data-tip="Home"><li><i class=" fa-solid fa-house"></i></li></a>
+          <a class="tooltip tooltip-right" data-tip="Pencil"><li><i class="fa-solid fa-pencil"></i></li></a>
+          <a class="tooltip tooltip-right" data-tip="User"><li><i class="fa-solid fa-user-plus"></i></li></a>
+          <a class="tooltip tooltip-right" data-tip="Flag"><li><i class="fa-regular fa-font-awesome"></i></li></a> 
+        </ul>
+      </div>
+      <img class="nav-image " src="images/logo.png" alt="">
+    </div>
+    <div class="navbar-end">
+      <div class="hidden lg:flex">
+        <ul class="menu menu-horizontal bg-base-200 rounded-box gap-2">
+          <a class="tooltip tooltip-top" data-tip="Home"><li><i class=" fa-solid fa-house"></i></li></a>
+          <a class="tooltip tooltip-top" data-tip="Pencil"><li><i class="fa-solid fa-pencil"></i></li></a>
+          <a class="tooltip tooltip-top" data-tip="User"><li><i class="fa-solid fa-user-plus"></i></li></a>
+          <a class="tooltip tooltip-top" data-tip="Flag"><li><i class="fa-regular fa-font-awesome"></i></li></a> 
+        </ul>
+      </div>
+      <div class="">
+        <button class="btn btn-active btn-primary">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto container">
+    <div class="hero min-h-[550px] bg-black  rounded-3xl" style="background-image: url('./images/bgbanner.png');">
+      <div class="mx-auto container hero-content lg:w-[800px] w-[250px] justify-between flex-col lg:flex-row-reverse rounded-3xl">
+
+        <div class="max-w-sm rounded-lg px-12 py-12 flex gap-8 leading-7 bg-white text-neutral-content">
+          <div class="text-[black]">
+            <p>Registered</p>
+            <p>Forum</p>
+            <p>Topics</p>
+            <p>Replies</p>
+          </div>
+          <div class="text-[black]">
+              <p>01</p>
+              <p>02</p>
+              <p>03</p>
+              <p>04</p>
+          </div>
+        </div>
+        <div class="lg:w-[400px] w-[250px] container text-neutral-content">
+          <h1 class="mx-auto lg:text-5xl text-3xl leading-[40px] lg:leading-[66px] font-bold">Welcome to the<br><span class="text-[#676AD7]">ReTro</span>Forum</h1>
+          <p class="py-6 mx-auto leading-[20px] ">Considered a two-star recruit by Rivals.com, Kelce accepted a scholarship Akron</p>
+          <label class="container lg:w-[400px] w-[250px] input input-bordered flex items-center gap-2">
+            <input id="search-container" type="text" class="grow text-[black]" placeholder="Search" />
+          
+            <button onclick="optionSearch()" class="btn btn-active btn-primary">Search</button>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mx-auto container mt-4 lg:mt-24 inter">
+    <div class="mx-auto container text-center">
+      <h1 class="text-[40px] text-[#12132D] font-extrabold leading-[50px]">Let's Discuss</h1>
+      <p class=" lg:w-[691px] mx-auto text-[18px] mt-6 text-[#717181] font-normal leading-7">All applicants from eligible country can apply for Ethiopia visa if they have passport which is valid for minimum 6 months.</p>
+    </div>
+
+    <div id="load-container" class="load-info mx-auto container text-center m-4 hidden ">
+      <span class="loading loading-spinner text-primary"></span>
+    <span class="loading loading-spinner text-secondary"></span>
+    <span class="loading loading-spinner text-accent"></span>
+    <span class="loading loading-spinner text-neutral"></span>
+    <span class="loading loading-spinner text-info"></span>
+    <span class="loading loading-spinner text-success"></span>
+    <span class="loading loading-spinner text-warning"></span>
+    <span class="loading loading-spinner text-error"></span>
+    </div>
+
+
+     <div class="mt-14 lg:flex justify-between mx-auto container">
+    
+      <div id="main-container" class=" second mb-2 card bg-[#F1F2FF] shadow-xl ">
+       
+      </div> 
+
+
+     <div class=" third card mx-auto container #F3F3F4 shadow-xl">
+       <div class="card-body">
+        <div class="mx-auto container w-[300px]">
+         <div class="flex justify-between ">
+          <h2>Title</h2>
+          <h5><span><i class="fa-solid fa-check-double"></i></span>mark as read (1)</h5>
+         </div>
+         <div class="mt-8 lg:w-[310px] flex p-4 bg-white justify-between mx-auto">
+          <h2>comment count</h2>
+          <nav class="flex gap-3">
+            <i class="fa-regular fa-eye"></i>
+            <span>5 min</span>
+          </nav>
+         </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div> 
+</header>
+              <!-- main  -->
+
+  <main class="mx-auto container">
+    <section class="mx-auto container latest-banner mt-3 lg:mt-[100px] mb-[100px]">
+      <div class="hero min-h-[403px] bg-black rounded-3xl">
+        <div class="mx-auto container hero-content lg:w-[800px] w-[250px] hero-content flex-col lg:flex-row-reverse">
+          <img src="images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
+          <div class="lg:w-[650px] w-[350px] text-neutral-content">
+            <h1 class="lg:text-5xl text-3xl font-bold">Join Our Forum</h1>
+            <p class="py-6 lg:w-[650px] w-[320px] ">All applicants from eligible country can apply for Ethiopia visa if they have passport which is valid for minimum 6 months can apply for Ethiopia visa if they.</p>
+            <button class="btn btn-primary">Registered Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-post mx-auto container">
+      <div class="mt-4 lg:mt-24 inter">
+        <div class="container lg:w-[691px] text-center mx-auto">
+          <h1 class="text-[40px] text-[#12132D] font-extrabold leading-[50px]">Latest Posts</h1>
+          <p class="text-[18px] mt-6 text-[#717181] font-normal leading-7">All applicants from eligible country can apply for Ethiopia visa if they have passport which is valid for minimum 6 months.</p>
+        </div>
+
+
+        <div id="latest-container" class="mx-auto container grid lg:grid-cols-3 gap-4 mt-12">
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+            <!-- footer  -->
+
+  <section class="main-footer bg-[#F5F5F6] mx-auto container">
+  </section>
+   <footer class="mx-auto container text-center">
+    <div class="mx-auto container mt-4 mb-24 lg:mt-24 inter">
+      <div class="lg:w-[604px] container  text-center mx-auto">
+        <img class="text-center mx-auto text-[40px] text-[#12132D] font-extrabold leading-[50px]" src="images/logo.png" alt="">
+        <p class="text-[18px] lg:w-[650px] mt-6 text-[#717181] font-normal leading-7">All applicants from eligible country can apply for Ethiopia visa if they have passport which is valid for minimum 6 months.</p>
+        <nav class="w-28 text-center mx-auto mt-8">
+          <div class="text-[#12132D] grid grid-flow-col gap-4">
+            <a><i class="fa-brands fa-twitter"></i></a>
+            <a><i class="fa-brands fa-facebook-f"></i></a>
+            <a><i class="fa-brands fa-instagram"></i></a>
+            <a><i class="fa-brands fa-github"></i></a>
+          </div>
+        </nav>
+      </div>
+      <hr class="mx-auto container text-[#57576A] h-[2px] mt-11 lg:w-[1170px] text-center">
+      <div class="w-48 text-center mx-auto mt-8">
+        <p class="text-[#57576A]">2017 , All right reserved</p>
+      </div>
+    </div>
+   </footer>
+
+
+
+
+
+
+    <script src="js/tailwind.config.js"></script>
+    <script src="js/first.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
